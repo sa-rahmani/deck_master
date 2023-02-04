@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebSec3_IPN.Models.IPN>
+
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+
+
+
+<div class="display-6" style="text-align:center">
+    <strong>Deck Master</strong>
+</div>
+<hr class="my-4" />
+<h4>Transactions</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+          
+          
+            <th> Payment ID</th>
+            <th>Created            </th>
+            <th>Name            </th>
+          
+            <th>Email            </th>
+         
+            <th>Amount            </th>
+          
+            <th>
+                MOP
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+        
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentID)
+            </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.create_time)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payerFirstName)
+            </td>
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.payerEmail)
+            </td>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentMethod)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
